@@ -327,10 +327,6 @@ function initModals() {
   const demoBtn = document.getElementById('watch-demo-btn');
   const demoModal = document.getElementById('demo-video-modal');
 
-  // Enroll Modal
-  const enrollBtns = document.querySelectorAll('.enroll-trigger-btn');
-  const enrollModal = document.getElementById('enroll-modal');
-
   const closeBtns = document.querySelectorAll('.modal-close-trigger');
 
   if (demoBtn && demoModal) {
@@ -340,12 +336,7 @@ function initModals() {
     });
   }
 
-  enrollBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (enrollModal) enrollModal.classList.add('show');
-    });
-  });
+
 
   closeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
