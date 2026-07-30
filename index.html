@@ -63,7 +63,7 @@
           <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#founder">Founder</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Student Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="showcase.html">Student Work</a></li>
           <li class="nav-item"><a class="nav-link" href="#curriculum">Curriculum</a></li>
         </ul>
         <div class="d-flex gap-3 align-items-center">
@@ -499,63 +499,70 @@
         <p>Commercial-grade AI videos, product ads, posters, and animations made by course members.</p>
       </div>
 
-      <!-- Gallery Filter Tabs -->
-      <div class="filter-nav">
-        <button class="filter-btn gallery-filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="videos">AI Videos</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="ads">Product Ads</button>
-        <button class="filter-btn gallery-filter-btn" data-filter="posters">Posters & Visuals</button>
+      <!-- Gallery Showcase Grid (3 Videos Desktop, 2 Videos Mobile) -->
+      <div class="row g-4 justify-content-center mb-4">
+        
+        <!-- Video 1 (Desktop & Mobile) -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="videos">
+          <div class="glass-card p-2 p-md-3 overflow-hidden border-primary shadow-lg position-relative h-100">
+            <div class="d-flex align-items-center justify-content-between px-2 py-1 mb-2">
+              <span class="badge bg-danger font-mono text-white"><i class="bi bi-youtube me-1"></i> STUDENT AI SHORT #1</span>
+              <small class="text-muted font-mono" style="font-size: 0.75rem;">Created with AI</small>
+            </div>
+            <div class="ratio ratio-9x16 rounded-3 overflow-hidden border border-secondary border-opacity-25 shadow">
+              <iframe src="https://www.youtube.com/embed/OwP7r8pOhXQ" title="Student AI Short 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100 h-100"></iframe>
+            </div>
+            <div class="pt-3 px-2 text-start">
+              <span class="tool-tag">Google Veo &bull; CapCut</span>
+              <h4 class="fs-5 text-white mb-1">AI Video Creation Masterclass</h4>
+              <p class="small text-muted m-0">By INNOVERSSE Student &bull; <i class="bi bi-eye-fill text-primary me-1"></i> Featured Work</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2 (Desktop & Mobile) -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="videos">
+          <div class="glass-card p-2 p-md-3 overflow-hidden border-primary shadow-lg position-relative h-100">
+            <div class="d-flex align-items-center justify-content-between px-2 py-1 mb-2">
+              <span class="badge bg-danger font-mono text-white"><i class="bi bi-youtube me-1"></i> STUDENT AI SHORT #2</span>
+              <small class="text-muted font-mono" style="font-size: 0.75rem;">Created with AI</small>
+            </div>
+            <div class="ratio ratio-9x16 rounded-3 overflow-hidden border border-secondary border-opacity-25 shadow">
+              <iframe src="https://www.youtube.com/embed/2SMWA5ZGx0Q" title="Student AI Short 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100 h-100"></iframe>
+            </div>
+            <div class="pt-3 px-2 text-start">
+              <span class="tool-tag">AI Ads &bull; Prompt Engineering</span>
+              <h4 class="fs-5 text-white mb-1">AI Product & Commercial Ad</h4>
+              <p class="small text-muted m-0">By INNOVERSSE Student &bull; <i class="bi bi-star-fill text-warning me-1"></i> Client Project</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3 (Desktop ONLY - Hidden on Mobile via d-none d-lg-block) -->
+        <div class="col-md-6 col-lg-4 d-none d-lg-block gallery-item" data-category="videos">
+          <div class="glass-card p-2 p-md-3 overflow-hidden border-primary shadow-lg position-relative h-100">
+            <div class="d-flex align-items-center justify-content-between px-2 py-1 mb-2">
+              <span class="badge bg-danger font-mono text-white"><i class="bi bi-youtube me-1"></i> STUDENT AI SHORT #3</span>
+              <small class="text-muted font-mono" style="font-size: 0.75rem;">Created with AI</small>
+            </div>
+            <div class="ratio ratio-9x16 rounded-3 overflow-hidden border border-secondary border-opacity-25 shadow">
+              <iframe src="https://www.youtube.com/embed/5tRj5b5zCeI" title="Student AI Short 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100 h-100"></iframe>
+            </div>
+            <div class="pt-3 px-2 text-start">
+              <span class="tool-tag">AI Filmmaking &bull; Visuals</span>
+              <h4 class="fs-5 text-white mb-1">Cinematic AI Short Story</h4>
+              <p class="small text-muted m-0">By INNOVERSSE Student &bull; <i class="bi bi-fire text-danger me-1"></i> Trending Work</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Gallery Grid -->
-      <div class="gallery-grid">
-
-        <!-- Gallery Item 1 -->
-        <div class="gallery-card gallery-item" data-category="videos" data-title="Sci-Fi AI Cinema Sequence"
-          data-tool="Made with Google Veo & CapCut">
-          <img src="assets/video1.png" alt="AI Sci-Fi Cinema" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <span class="tool-tag">Google Veo &bull; CapCut</span>
-            <h4 class="fs-5 text-white mb-1">Cyberpunk AI Short Sequence</h4>
-            <p class="small text-muted m-0">By Arjun M. &bull; <i class="bi bi-eye-fill text-primary"></i> 14.2K Views
-            </p>
-          </div>
-        </div>
-
-        <!-- Gallery Item 2 -->
-        <div class="gallery-card gallery-item" data-category="ads" data-title="Luxury Perfume Commercial Ad"
-          data-tool="Made with AI Product Photo & Midjourney">
-          <img src="assets/ad1.png" alt="AI Product Ad" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <span class="tool-tag">AI Product Photography</span>
-            <h4 class="fs-5 text-white mb-1">Luxury Perfume E-Commerce Ad</h4>
-            <p class="small text-muted m-0">By Rahul K. &bull; <i class="bi bi-briefcase-fill text-success"></i> Client
-              Approved</p>
-          </div>
-        </div>
-
-        <!-- Gallery Item 3 -->
-        <div class="gallery-card gallery-item" data-category="posters" data-title="Futuristic Event Poster Design"
-          data-tool="Made with Prompt Engineering & Canva AI">
-          <img src="assets/poster1.png" alt="AI Event Poster" class="gallery-thumb">
-          <div class="gallery-overlay">
-            <span class="tool-tag">Prompt Engineering</span>
-            <h4 class="fs-5 text-white mb-1">Neon Hologram Event Poster</h4>
-            <p class="small text-muted m-0">By Ananya P. &bull; <i class="bi bi-star-fill text-warning"></i> Featured
-              Work</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Below Gallery Re-engagement CTA -->
-      <div class="mt-5 text-center">
-        <div class="glass-card p-4 d-inline-flex flex-column flex-md-row align-items-center gap-4">
-          <span class="fs-5 text-white fw-semibold">Want to create commercial-grade AI work like this?</span>
-          <a href="https://wa.me/919496957914?text=Hi%20INNOVERSSE%20Team!%20I%20want%20to%20join%20the%20AI%20Masterclass." target="_blank" class="btn-primary-blue">
-            <i class="bi bi-whatsapp"></i> Join Now & Start Creating →
-          </a>
-        </div>
+      <!-- View All Showcase Page CTA Button -->
+      <div class="text-center mt-4 pt-2">
+        <a href="showcase.html" class="btn-primary-blue fs-5 py-3 px-4 px-md-5 rounded-3 shadow-lg">
+          <i class="bi bi-grid-3x3-gap-fill me-2"></i> View All Videos →
+        </a>
       </div>
 
     </div>
@@ -697,28 +704,39 @@
   </section>
 
   <!-- ==========================================
-       Footer Section
+       Footer Section (Premium Design)
        ========================================== -->
-  <footer class="site-footer py-5 border-top border-secondary border-opacity-25" style="background: #06060a;">
+  <footer class="site-footer py-4 border-top border-secondary border-opacity-25" style="background: radial-gradient(circle at bottom center, rgba(0, 122, 255, 0.08), transparent 70%), #06060a;">
     <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-md-6">
-          <div class="navbar-brand mb-2">
-            <img src="assets/favicon_io/android-chrome-192x192.png" alt="INNOVERSSE Logo" class="brand-logo-img">
+      <div class="row g-4 justify-content-between align-items-start">
+        
+        <!-- Brand & Description -->
+        <div class="col-lg-6 col-md-6 text-start">
+          <div class="navbar-brand justify-content-start mb-2" style="font-size: 1.35rem;">
+            <img src="assets/favicon_io/android-chrome-192x192.png" alt="INNOVERSSE Logo" class="brand-logo-img" style="width: 36px; height: 36px;">
             <span>INNOVERSSE<span style="color: var(--accent-blue);">.AI</span></span>
           </div>
-          <p class="small text-muted m-0">Premier Malayalam AI Video Creation Master Course by Seban Shaji.</p>
+          <p class="text-muted small mb-0" style="max-width: 420px; line-height: 1.6;">
+            Kerala's Premier Malayalam AI Video Creation Masterclass. Empowering creators & business owners to produce high-converting commercial AI content.
+          </p>
         </div>
-        <div class="col-md-6 text-md-end">
-          <div class="d-flex flex-wrap justify-content-start justify-content-md-end gap-3 mb-2 footer-nav-links">
-            <a href="#hero" class="text-muted text-decoration-none small text-nowrap">Home</a>
-            <a href="#founder" class="text-muted text-decoration-none small text-nowrap">Founder</a>
-            <a href="#curriculum" class="text-muted text-decoration-none small text-nowrap">Curriculum</a>
-            <a href="#" class="text-muted text-decoration-none small text-nowrap">Privacy Policy</a>
-            <a href="#" class="text-muted text-decoration-none small text-nowrap">Terms & Conditions</a>
-          </div>
-          <p class="small text-dim m-0">&copy; 2026 INNOVERSSE. All rights reserved.</p>
+
+        <!-- Quick Links -->
+        <div class="col-lg-5 col-md-6 text-start">
+          <h5 class="fs-6 text-white font-mono fw-bold mb-3 text-uppercase text-gradient-blue" style="letter-spacing: 1px;">Quick Navigation</h5>
+          <ul class="list-unstyled m-0 d-flex flex-column gap-2 footer-nav-links">
+            <li><a href="#hero" class="text-muted text-decoration-none small d-inline-flex align-items-center"><i class="bi bi-chevron-right text-primary me-2" style="font-size: 0.7rem;"></i>Home Page</a></li>
+            <li><a href="#founder" class="text-muted text-decoration-none small d-inline-flex align-items-center"><i class="bi bi-chevron-right text-primary me-2" style="font-size: 0.7rem;"></i>About Founder</a></li>
+            <li><a href="showcase.html" class="text-muted text-decoration-none small d-inline-flex align-items-center"><i class="bi bi-chevron-right text-primary me-2" style="font-size: 0.7rem;"></i>Student Work Showcase</a></li>
+            <li><a href="#curriculum" class="text-muted text-decoration-none small d-inline-flex align-items-center"><i class="bi bi-chevron-right text-primary me-2" style="font-size: 0.7rem;"></i>Masterclass Curriculum</a></li>
+          </ul>
         </div>
+
+      </div>
+
+      <div class="pt-3 mt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2 text-start">
+        <p class="small text-muted m-0" style="font-size: 0.78rem;">&copy; 2026 INNOVERSSE.AI. All rights reserved.</p>
+        <p class="small text-muted m-0" style="font-size: 0.78rem;">Built for AI Creators in Malayalam.</p>
       </div>
     </div>
   </footer>

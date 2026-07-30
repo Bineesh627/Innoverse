@@ -240,31 +240,48 @@ function initGallerySystem() {
 
       const filter = btn.getAttribute('data-filter');
 
+      // Filter individual items
       items.forEach(item => {
         const category = item.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
           item.style.display = 'block';
+          item.style.opacity = '1';
         } else {
           item.style.display = 'none';
+          item.style.opacity = '0';
+        }
+      });
+
+      // Filter category sections if present
+      const sectionBlocks = document.querySelectorAll('[data-category-section]');
+      sectionBlocks.forEach(sec => {
+        const secCat = sec.getAttribute('data-category-section');
+        if (filter === 'all' || secCat === filter) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
         }
       });
     });
   });
 
-  // Lightbox click triggers
+  // Lightbox click triggers (image items)
   items.forEach(item => {
-    item.addEventListener('click', () => {
-      const imgSrc = item.querySelector('img').src;
-      const title = item.getAttribute('data-title') || 'Student Work';
-      const tag = item.getAttribute('data-tool') || 'AI Generated';
+    const img = item.querySelector('img');
+    if (img) {
+      item.addEventListener('click', () => {
+        const imgSrc = img.src;
+        const title = item.getAttribute('data-title') || 'Student Work';
+        const tag = item.getAttribute('data-tool') || 'AI Generated';
 
-      if (lightboxModal && lightboxImage) {
-        lightboxImage.src = imgSrc;
-        lightboxTitle.textContent = title;
-        lightboxTag.textContent = tag;
-        lightboxModal.classList.add('show');
-      }
-    });
+        if (lightboxModal && lightboxImage) {
+          lightboxImage.src = imgSrc;
+          lightboxTitle.textContent = title;
+          lightboxTag.textContent = tag;
+          lightboxModal.classList.add('show');
+        }
+      });
+    }
   });
 }
 

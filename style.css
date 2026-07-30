@@ -951,6 +951,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 180px !important;
   }
 
+  body.showcase-page footer,
+  footer.showcase-footer {
+    padding-bottom: 24px !important;
+  }
+
   .navbar-collapse {
     background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(20px);
