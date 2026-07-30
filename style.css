@@ -277,17 +277,31 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-.brand-icon {
+.brand-icon, .brand-logo-img {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  object-fit: contain;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-white);
-  font-size: 1.2rem;
   box-shadow: 0 0 15px var(--accent-blue-glow);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #000;
+}
+
+.brand-full-logo {
+  height: 42px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(0, 122, 255, 0.4));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.brand-full-logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 18px rgba(0, 122, 255, 0.65));
 }
 
 .nav-link {
@@ -786,16 +800,16 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 15, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--border-blue-glass);
-  padding: 12px 20px;
+  background: rgba(10, 10, 18, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 122, 255, 0.35);
+  padding: 10px 16px;
   display: none;
   align-items: center;
   justify-content: space-between;
-  z-index: 980;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.85);
 }
 
 /* --- Modals --- */
@@ -850,6 +864,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-close-btn:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- High Conversion Package Box Styling --- */
+.package-item-card {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all var(--transition-fast);
+  min-height: 72px;
+}
+
+.package-item-card:hover {
+  border-color: var(--accent-blue);
+  background: rgba(30, 41, 59, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 122, 255, 0.25);
+}
+
+.pulse-glow {
+  animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 122, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 122, 255, 0); }
 }
 
 /* --- Media Queries --- */
