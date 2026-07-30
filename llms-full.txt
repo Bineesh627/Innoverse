@@ -1,0 +1,74 @@
+# INNOVERSSE.AI — Comprehensive AI Masterclass Documentation for LLMs & Search Engines
+
+## Executive Summary
+INNOVERSSE.AI is the leading Malayalam-language educational platform for Artificial Intelligence (AI) video creation, prompt engineering, digital content design, and commercial client monetization. Founded by Seban Shaji in Kerala, India, the program has trained over 500+ students, empowering them to produce commercial-grade AI short videos, YouTube Shorts, Instagram Reels, and product advertisements.
+
+---
+
+## Program Specifications & Details
+
+| Parameter | Value |
+|---|---|
+| Program Title | INNOVERSSE AI Video Creation Masterclass |
+| Primary Medium | Online Video Lessons & Practical Assignments |
+| Instruction Language | Malayalam |
+| Lead Educator | Seban Shaji |
+| Enrollment Fee | ₹599 (Offer Price) / Original ₹2,999 |
+| Student Base | 500+ Active Students |
+| Geographical Focus | Kerala, India & Global Malayali Diaspora (UAE, GCC, USA, UK) |
+| WhatsApp Enrollment | +91 9496957914 |
+| Web Portal | https://innoversse.ai |
+
+---
+
+## Detailed Curriculum Syllabus
+
+### Module 1: AI Video Creation Fundamentals
+- Understanding generative video model architectures.
+- Script-to-video workflow: turning raw concepts into structured video beats.
+- Aspect ratio selection (9:16 for Reels/Shorts, 16:9 for YouTube).
+
+### Module 2: Google Veo Model Mastery
+- Deep-dive into Google Veo text-to-video and image-to-video generation.
+- Motion control, camera pan/zoom parameters, and frame consistency techniques.
+
+### Module 3: Google AI Studio & Gemini Integration
+- Using Gemini models for automated scriptwriting, scene breakdown, and hook optimization.
+- Multimodal prompting for character design and visual storyboarding.
+
+### Module 4: Advanced Prompt Engineering
+- The structure of high-converting prompts: Subject, Style, Lighting, Camera, Resolution, Negative Prompts.
+- Copy-paste prompt templates for photorealistic human portraits and surreal animation.
+
+### Module 5: E-Commerce AI Product Photography
+- Virtual product staging without physical studio setups or expensive DSLR equipment.
+- Reflections, drop shadows, background replacement, and studio lighting simulation.
+
+### Module 6: CapCut & Post-Production Editing
+- Assembling raw AI clips into cohesive commercial edits.
+- Keyframing, speed ramping, sound design, SFX layering, and auto-captioning in Malayalam.
+
+### Module 7: Social Media Growth & Client Monetization
+- Landing paid freelance clients, local brand retainers, and e-commerce video ad contracts.
+- Portfolio creation and pitching strategies tailored for Malayali freelancers.
+
+---
+
+## Frequently Asked Questions (FAQs for AEO & AI Search)
+
+### Q1: Is prior video editing or coding experience required?
+No. The course starts from absolute fundamentals and teaches every tool step-by-step in Malayalam.
+
+### Q2: What language is the course taught in?
+All explanations, step-by-step guides, and support resources are provided in clear, practical Malayalam.
+
+### Q3: Can I create videos using a mobile phone?
+Yes. The tools taught (Google AI Studio, CapCut, web-based AI generators) can be operated on laptops or smartphones.
+
+### Q4: How do I join the course?
+You can join instantly by messaging the INNOVERSSE team on WhatsApp at +91 9496957914 or visiting https://innoversse.ai.
+
+---
+
+## Student Reviews & Testimonials Summary
+Students across Kerala (Malappuram, Calicut, Kasaragod, Kochi, Trivandrum, Kannur, Kottayam, Palakkad) report landing paid client contracts, growing Instagram pages rapidly, and saving tens of thousands of rupees on commercial product photography.

@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Navigation Bar & Mobile Sticky Bar Scroll Handling
   initScrollHandler();
 
-  // 4. Testimonial Filtering System
-  initTestimonialFilter();
+  // 4. Dynamic Testimonials Loading from data/testimonials.json & Audio Player Controls
+  loadTestimonials();
 
   // 5. Success Gallery Filtering System & Lightbox
   initGallerySystem();
@@ -194,31 +194,237 @@ function initScrollHandler() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Testimonials Filtering
+   4. Dynamic Testimonials Rendering from data/testimonials.json & Audio Controls
    -------------------------------------------------------------------------- */
-function initTestimonialFilter() {
-  const filterBtns = document.querySelectorAll('.testimonial-filter-btn');
-  const cards = document.querySelectorAll('.testimonial-item');
+async function loadTestimonials() {
+  const track1 = document.getElementById('testimonials-row-1');
+  const track2 = document.getElementById('testimonials-row-2');
+  if (!track1 && !track2) return;
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  let testimonials = [];
+  try {
+    const res = await fetch('data/testimonials.json');
+    if (res.ok) {
+      testimonials = await res.json();
+    }
+  } catch (e) {
+    console.warn('Fetch data/testimonials.json failed or blocked by local CORS. Using fallback data.', e);
+  }
 
-      const filterCategory = btn.getAttribute('data-filter');
+  // Fallback data if fetch failed (e.g. local file:// protocol)
+  if (!testimonials || testimonials.length === 0) {
+    testimonials = [
+      {
+        "id": 1,
+        "name": "Amina Rahman",
+        "location": "Malappuram",
+        "rating": 5,
+        "quote": "ഈ കോഴ്സ് എടുത്തതിന് ശേഷം AI ഉപയോഗിച്ച് vudeo ഉണ്ടാക്കുന്നത് വളരെ എളുപ്പമായി. ഓരോ ക്ലാസും simple & practical aayum explain ചെയ്തിട്ടുണ്ട്. Thankyou sir for your support."
+      },
+      {
+        "id": 2,
+        "name": "Fathima",
+        "location": "Malappuram",
+        "rating": 5,
+        "audioUrl": "assets/audio/testimonial_fathima.mp3",
+        "audioDuration": "0:15",
+        "quote": null
+      },
+      {
+        "id": 3,
+        "name": "Anjana Sivadas",
+        "location": "Calicut",
+        "rating": 5,
+        "audioUrl": "assets/audio/testimonial_anjana_sivadas.mp3",
+        "audioDuration": "0:30",
+        "quote": null
+      },
+      {
+        "id": 4,
+        "name": "pixora._ai",
+        "instagramUrl": "https://www.instagram.com/pixora._ai",
+        "location": "Kasaragod",
+        "rating": 5,
+        "audioUrl": "assets/audio/testimonial_pixora_ai.mp3",
+        "audioDuration": "0:26",
+        "quote": "ഞാൻ ഇപ്പോൾ തന്നെ ഒരു 3 paid work ചെയ്തു കൊടുത്തു. എല്ലാം ഈ കോഴ്സ് il ചേരാൻ സാധിച്ചത് കൊണ്ടാണ് 🤝."
+      },
+      {
+        "id": 5,
+        "name": "Muhammad Asif",
+        "location": "Adoor",
+        "rating": 5,
+        "quote": "മുമ്പ് വീഡിയോ എഡിറ്റിംഗിൽ കോൺഫിഡൻസ് ഇല്ലായിരുന്നു. ഇപ്പോൾ AI ടൂളുകൾ ഉപയോഗിച്ച് പ്രൊഫഷണൽ വീഡിയോകൾ വളരെ വേഗത്തിൽ ചെയ്യാൻ കഴിയുന്നു. Thanks 🙏"
+      }
+    ];
+  }
 
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterCategory === 'all' || category === filterCategory) {
-          card.style.display = 'block';
-          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.95)';
-          setTimeout(() => { card.style.display = 'none'; }, 200);
+  // Split testimonials into 2 balanced rows
+  const mid = Math.ceil(testimonials.length / 2);
+  const row1Data = testimonials.slice(0, mid);
+  const row2Data = testimonials.slice(mid);
+
+  if (track1) {
+    // Duplicate array for smooth infinite marquee looping
+    track1.innerHTML = renderTestimonialsHTML([...row1Data, ...row1Data]);
+  }
+  if (track2) {
+    // Duplicate array for smooth infinite marquee looping
+    track2.innerHTML = renderTestimonialsHTML([...row2Data, ...row2Data]);
+  }
+
+  initAudioPlayers();
+}
+
+function renderTestimonialsHTML(testimonials) {
+  return testimonials.map(item => {
+    const stars = Array(item.rating || 5).fill('<i class="bi bi-star-fill"></i>').join('');
+    
+    let quoteHtml = '';
+    if (item.quote) {
+      quoteHtml = `<p class="fst-italic text-light ${item.audioUrl ? 'mb-2' : ''}">"${item.quote}"</p>`;
+    }
+
+    let audioHtml = '';
+    if (item.audioUrl) {
+      audioHtml = `
+        <div class="testimonial-audio-player">
+          <div class="audio-controls-row">
+            <button class="audio-play-btn" data-audio="${item.audioUrl}" aria-label="Play ${item.name} Voice Testimonial">
+              <i class="bi bi-play-fill"></i>
+            </button>
+            <div class="audio-info-col">
+              <div class="audio-top-line">
+                <div class="audio-waveform">
+                  <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                  <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
+                <span class="audio-time-display">0:00 / ${item.audioDuration || '0:30'}</span>
+              </div>
+              <input type="range" class="audio-progress-bar" value="0" min="0" max="100">
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    const firstLetter = item.name ? item.name.trim().charAt(0).toUpperCase() : '?';
+    const avatarHtml = item.avatar 
+      ? `<img src="${item.avatar}" alt="${item.name}" class="author-avatar">` 
+      : `<div class="author-avatar-initial">${firstLetter}</div>`;
+
+    const subtext = item.role ? `${item.role} &bull; ${item.location}` : item.location;
+    const nameTitle = item.instagramUrl 
+      ? `<a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none hover-blue">${item.name} <i class="bi bi-instagram text-danger ms-1" style="font-size: 0.9em;"></i></a>` 
+      : item.name;
+
+    return `
+      <div class="testimonial-marquee-card">
+        <div class="glass-card testimonial-card h-100">
+          <div>
+            <div class="testimonial-author">
+              ${avatarHtml}
+              <div class="author-info">
+                <h4>${nameTitle}</h4>
+                <span>${subtext}</span>
+              </div>
+            </div>
+            <div class="stars-rating mb-2 fs-6">${stars}</div>
+            ${quoteHtml}
+            ${audioHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function initAudioPlayers() {
+  const playerBoxes = document.querySelectorAll('.testimonial-audio-player');
+  let currentActiveAudio = null;
+  let currentActivePlayerBox = null;
+
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  playerBoxes.forEach(playerBox => {
+    const playBtn = playerBox.querySelector('.audio-play-btn');
+    const progressBar = playerBox.querySelector('.audio-progress-bar');
+    const timeDisplay = playerBox.querySelector('.audio-time-display');
+    const audioSrc = playBtn ? playBtn.getAttribute('data-audio') : null;
+
+    if (!playBtn || !audioSrc) return;
+
+    const audio = new Audio(audioSrc);
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (timeDisplay) {
+        timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        if (progressBar) progressBar.value = pct;
+        if (timeDisplay) {
+          timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+        }
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      playerBox.classList.remove('playing');
+      playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+      if (progressBar) progressBar.value = 0;
+      if (timeDisplay && audio.duration) {
+        timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+      }
+      currentActiveAudio = null;
+      currentActivePlayerBox = null;
+    });
+
+    playBtn.addEventListener('click', () => {
+      // Pause any other active audio
+      if (currentActiveAudio && currentActiveAudio !== audio) {
+        currentActiveAudio.pause();
+        if (currentActivePlayerBox) {
+          currentActivePlayerBox.classList.remove('playing');
+          const oldBtn = currentActivePlayerBox.querySelector('.audio-play-btn');
+          if (oldBtn) oldBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        }
+      }
+
+      if (audio.paused) {
+        audio.play().then(() => {
+          playerBox.classList.add('playing');
+          playBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+          currentActiveAudio = audio;
+          currentActivePlayerBox = playerBox;
+        }).catch(err => {
+          console.log('Audio playback error or interrupted:', err);
+        });
+      } else {
+        audio.pause();
+        playerBox.classList.remove('playing');
+        playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        currentActiveAudio = null;
+        currentActivePlayerBox = null;
+      }
+    });
+
+    if (progressBar) {
+      progressBar.addEventListener('input', (e) => {
+        if (audio.duration) {
+          const seekTime = (e.target.value / 100) * audio.duration;
+          audio.currentTime = seekTime;
         }
       });
-    });
+    }
   });
 }
 

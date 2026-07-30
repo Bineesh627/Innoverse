@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Amina Rahman",
+    "location": "Malappuram",
+    "rating": 5,
+    "quote": "ഈ കോഴ്സ് എടുത്തതിന് ശേഷം AI ഉപയോഗിച്ച് vudeo ഉണ്ടാക്കുന്നത് വളരെ എളുപ്പമായി. ഓരോ ക്ലാസും simple & practical aayum explain ചെയ്തിട്ടുണ്ട്. Thankyou sir for your support."
+  },
+  {
+    "id": 2,
+    "name": "Fathima",
+    "location": "Malappuram",
+    "rating": 5,
+    "audioUrl": "assets/audio/testimonial_fathima.mp3",
+    "audioDuration": "0:15",
+    "quote": null
+  },
+  {
+    "id": 3,
+    "name": "Anjana Sivadas",
+    "location": "Calicut",
+    "rating": 5,
+    "audioUrl": "assets/audio/testimonial_anjana_sivadas.mp3",
+    "audioDuration": "0:30",
+    "quote": null
+  },
+  {
+    "id": 4,
+    "name": "pixora._ai",
+    "instagramUrl": "https://www.instagram.com/pixora._ai",
+    "location": "Kasaragod",
+    "rating": 5,
+    "audioUrl": "assets/audio/testimonial_pixora_ai.mp3",
+    "audioDuration": "0:26",
+    "quote": "ഞാൻ ഇപ്പോൾ തന്നെ ഒരു 3 paid work ചെയ്തു കൊടുത്തു. എല്ലാം ഈ കോഴ്സ് il ചേരാൻ സാധിച്ചത് കൊണ്ടാണ് 🤝."
+  },
+  {
+    "id": 5,
+    "name": "Muhammad Asif",
+    "location": "Adoor",
+    "rating": 5,
+    "quote": "മുമ്പ് വീഡിയോ എഡിറ്റിംഗിൽ കോൺഫിഡൻസ് ഇല്ലായിരുന്നു. ഇപ്പോൾ AI ടൂളുകൾ ഉപയോഗിച്ച് പ്രൊഫഷണൽ വീഡിയോകൾ വളരെ വേഗത്തിൽ ചെയ്യാൻ കഴിയുന്നു. Thanks 🙏"
+  },
+  {
+    "id": 6,
+    "name": "Jayadev",
+    "location": "Kannur",
+    "rating": 5,
+    "quote": "കോഴ്സിലെ ഓരോ മോഡ്യൂളും വളരെ ഉപകാരപ്രദമായിരുന്നു. സോഷ്യൽ മീഡിയയ്ക്കായി നല്ല ക്വാളിറ്റിയുള്ള കണ്ടന്റ് ഇനി സ്വന്തമായി ഉണ്ടാക്കാൻ പറ്റുവല്ലോ 😅 only bcz of ur support"
+  },
+  {
+    "id": 7,
+    "name": "Niyas Ali",
+    "location": "kochi",
+    "rating": 5,
+    "quote": "AI Video Creation പഠിക്കാൻ ആഗ്രഹിക്കുന്നവർക്ക് ഈ കോഴ്സ് തീർച്ചയായും recommend ചെയ്യും. പഠിപ്പിക്കുന്ന രീതി വളരെ ക്ലിയറാണ്. Ente ella support um🔥"
+  },
+  {
+    "id": 8,
+    "name": "Safwan Ibrahim ",
+    "location": "Palakkad",
+    "rating": 5,
+    "quote": "Prompt-കളും AI ടൂളുകളും ഉപയോഗിക്കുന്ന രീതിയും വളരെ നന്നായി പഠിപ്പിച്ചിട്ടുണ്ട്. പ്രതീക്ഷിച്ചതിനേക്കാൾ കൂടുതൽ വാല്യൂ കിട്ടി."
+  },
+  {
+    "id": 9,
+    "name": "Hiba Fathima",
+    "location": "Malappuram",
+    "rating": 5,
+    "quote": "Oruppad നന്ദിയുണ്ട് sir, njan ente kurach friends inum koode suggest cheythitund👍."
+  },
+  {
+    "id": 10,
+    "name": "Mithun",
+    "location": "Idukki",
+    "rating": 5,
+    "quote": "Hi sir 🥰 njn instel oru page okk തുടങ്ങി. Nalla reach കിട്ടുന്നുന്നുണ്ട്  thankyou"
+  },
+  {
+    "id": 11,
+    "name": "Nimisha",
+    "location": "Kottayam",
+    "rating": 5,
+    "audioUrl": "assets/audio/testimonial_nimisha.mp3",
+    "audioDuration": "0:19",
+    "quote": null
+  }
+]

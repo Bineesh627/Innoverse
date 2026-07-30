@@ -1,0 +1,37 @@
+# INNOVERSSE.AI — Malayalam AI Video Creation Masterclass
+
+> INNOVERSSE.AI is Kerala's premier online AI Video Creation and Digital Content Masterclass founded by Seban Shaji. It teaches students, freelancers, video editors, and business owners how to leverage cutting-edge Artificial Intelligence tools to create commercial-grade videos, product ads, cinematic shorts, and digital graphics.
+
+## Core Course Overview
+- **Course Name**: INNOVERSSE AI Video Creation Masterclass
+- **Language**: Malayalam
+- **Price**: ₹599 (Limited-Time Offer, original ₹2,999)
+- **Target Audience**: Students, Freelancers, Business Owners, Content Creators, Video Editors in Kerala and worldwide Malayalam-speaking community.
+- **Enrolled Students**: 500+ active learners
+- **Founder & Lead Instructor**: Seban Shaji (AI Educator & Content Strategist)
+- **Official Website**: https://innoversse.ai
+- **Contact / Enrollment**: WhatsApp +91 9496957914
+
+## Key Modules & Topics Taught
+1. **AI Video Creation**: End-to-end AI video production, concept scripting, generation pipeline, and export-ready social media delivery.
+2. **Google Veo Mastery**: Generating cinematic AI video clips using Google's flagship Veo model with precise prompt control.
+3. **Google AI Studio**: Multimodal content creation with Gemini-powered tools for automated scriptwriting and storyboards.
+4. **Prompt Engineering**: Writing high-converting text prompts for image generation, video generation, and copywriting.
+5. **AI Product Photography**: Creating studio-quality e-commerce product photos without physical cameras or studio lighting.
+6. **CapCut Video Editing**: Professional editing workflows, dynamic sound design, keyframes, motion effects, and auto-captioning.
+7. **Social Media Growth & Monetization**: Strategies to build reach on Instagram/YouTube and land paid local client retainers.
+
+## Key Offer Package & Bonuses (₹599 Offer)
+- Access to 10 core AI training modules
+- Practical prompt library & templates (100+ copy-paste prompts)
+- Live project demonstrations & Malayalam community support
+- PDF guidebooks and workflow cheat sheets
+- Client acquisition and freelancing pitch templates
+
+## Pages & Links
+- [Homepage & Registration](https://innoversse.ai/#hero): Course curriculum, pricing, and WhatsApp registration.
+- [Student Work Showcase](https://innoversse.ai/showcase.html): Real commercial AI short videos, reels, and ads created by course students.
+- [Student Testimonials](https://innoversse.ai/#testimonials): Authentic voice and text reviews from Kerala students.
+- [About Founder Seban Shaji](https://innoversse.ai/#founder): Background and vision for Malayalam AI education.
+- [Full Curriculum & Modules](https://innoversse.ai/#curriculum): Detailed syllabus breakdown.
+- [Extended LLM Context File](https://innoversse.ai/llms-full.txt): Complete detailed documentation for AI language models.

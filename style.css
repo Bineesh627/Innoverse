@@ -572,6 +572,73 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
+/* --------------------------------------------------------------------------
+   Testimonials Infinite Marquee Slider (Dual Row Scrolling)
+   -------------------------------------------------------------------------- */
+.testimonials-marquee-wrapper {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  padding: 10px 0;
+}
+
+.marquee-row {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* Row 1: Left to Right movement */
+.marquee-row-left .marquee-track {
+  animation: marqueeScrollLeft 38s linear infinite;
+}
+
+/* Row 2: Right to Left movement */
+.marquee-row-right .marquee-track {
+  animation: marqueeScrollRight 38s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeScrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.testimonial-marquee-card {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .testimonial-marquee-card {
+    width: 290px;
+  }
+}
+
 .testimonial-author {
   display: flex;
   align-items: center;
@@ -579,13 +646,28 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
-.author-avatar {
+.author-avatar, .author-avatar-initial {
   width: 54px;
   height: 54px;
   border-radius: 50%;
   border: 2px solid var(--accent-blue);
+  box-shadow: 0 0 14px var(--accent-blue-glow);
+  flex-shrink: 0;
+}
+
+.author-avatar {
   object-fit: cover;
-  box-shadow: 0 0 12px var(--accent-blue-glow);
+}
+
+.author-avatar-initial {
+  background: linear-gradient(135deg, #007aff, #a855f7);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .author-info h4 {
@@ -631,6 +713,166 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin-right: 6px;
 }
+
+/* Testimonial Format Type Badges */
+.badge-pill-type {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.badge-type-text {
+  background: rgba(0, 122, 255, 0.15);
+  border: 1px solid rgba(0, 122, 255, 0.4);
+  color: #60a5fa !important;
+}
+.badge-type-voice {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #c084fc !important;
+}
+.badge-type-combo {
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  color: #f472b6 !important;
+}
+
+/* Voice Audio Player Container */
+.testimonial-audio-player {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-audio-player.playing {
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+.audio-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.audio-play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007aff, #a855f7);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.audio-play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.6);
+}
+
+.audio-info-col {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.audio-top-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Equalizer Waveform Bars */
+.audio-waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+}
+
+.audio-waveform .bar {
+  width: 3px;
+  height: 6px;
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 3px;
+  transition: height 0.15s ease, background-color 0.3s ease;
+}
+
+.testimonial-audio-player.playing .audio-waveform .bar {
+  background: linear-gradient(to top, #007aff, #c084fc);
+  animation: audioWave 1.2s infinite ease-in-out alternate;
+}
+
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(2) { animation-delay: 0.35s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(3) { animation-delay: 0.2s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(4) { animation-delay: 0.5s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(5) { animation-delay: 0.4s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(6) { animation-delay: 0.25s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(7) { animation-delay: 0.45s; }
+.testimonial-audio-player.playing .audio-waveform .bar:nth-child(8) { animation-delay: 0.15s; }
+
+@keyframes audioWave {
+  0% { height: 4px; }
+  50% { height: 18px; }
+  100% { height: 6px; }
+}
+
+.audio-progress-bar {
+  width: 100%;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.audio-progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 8px #a855f7;
+  cursor: pointer;
+}
+
+.audio-time-display {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.audio-transcript-note {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-top: 10px;
+  font-style: italic;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.4;
+}
+
 
 /* Interactive Before / After Drag Slider */
 .comparison-slider-container {
