@@ -323,25 +323,40 @@ function initProgressBar() {
    8. Modal Controls
    -------------------------------------------------------------------------- */
 function initModals() {
-  // Demo Video Modal
+  // Demo / Intro Video Trigger & Modal
   const demoBtn = document.getElementById('watch-demo-btn');
   const demoModal = document.getElementById('demo-video-modal');
+  const heroVideo = document.getElementById('hero-intro-video');
 
   const closeBtns = document.querySelectorAll('.modal-close-trigger');
 
-  if (demoBtn && demoModal) {
+  if (demoBtn) {
     demoBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      demoModal.classList.add('show');
+      // Scroll smoothly to the hero video container and play it
+      const videoSection = document.getElementById('hero-video');
+      if (videoSection) {
+        videoSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (heroVideo) {
+        heroVideo.play().catch(() => {});
+      }
     });
   }
 
-
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('show');
+    const modalVideo = modal.querySelector('video');
+    if (modalVideo) {
+      modalVideo.pause();
+    }
+  };
 
   closeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const modal = btn.closest('.custom-modal-backdrop');
-      if (modal) modal.classList.remove('show');
+      closeModal(modal);
     });
   });
 
@@ -349,7 +364,7 @@ function initModals() {
   document.querySelectorAll('.custom-modal-backdrop').forEach(backdrop => {
     backdrop.addEventListener('click', (e) => {
       if (e.target === backdrop) {
-        backdrop.classList.remove('show');
+        closeModal(backdrop);
       }
     });
   });
@@ -357,7 +372,7 @@ function initModals() {
   // ESC key to close active modal
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.custom-modal-backdrop.show').forEach(m => m.classList.remove('show'));
+      document.querySelectorAll('.custom-modal-backdrop.show').forEach(m => closeModal(m));
     }
   });
 }

@@ -413,6 +413,35 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Hero Video Showcase (9:16 Vertical Video Support) */
+.hero-video-container {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.ratio-9x16 {
+  --bs-aspect-ratio: 177.77777778%;
+  aspect-ratio: 9 / 16;
+}
+
+.hero-video-wrapper {
+  background: rgba(18, 18, 26, 0.85);
+  border: 1px solid var(--border-blue-glass) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 122, 255, 0.25) !important;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hero-video-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 50px rgba(0, 122, 255, 0.4) !important;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
