@@ -1190,7 +1190,7 @@ h1, h2, h3, h4, h5, h6 {
   footer.site-footer,
   footer.py-5,
   footer {
-    padding-bottom: 180px !important;
+    padding-bottom: 24px !important;
   }
 
   body.showcase-page footer,
@@ -1230,11 +1230,8 @@ h1, h2, h3, h4, h5, h6 {
   .section-header h2 {
     font-size: 2.2rem;
   }
-  .sticky-mobile-bar {
-    display: flex;
-  }
   .floating-whatsapp {
-    bottom: 95px;
+    bottom: 25px;
   }
 }
 
