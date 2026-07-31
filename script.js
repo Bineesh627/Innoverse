@@ -196,30 +196,34 @@ function initScrollHandler() {
 /* --------------------------------------------------------------------------
    4. Dynamic Testimonials Rendering from data/testimonials.json & Audio Controls
    -------------------------------------------------------------------------- */
-async function loadTestimonials() {
-  const track1 = document.getElementById('testimonials-row-1');
-  const track2 = document.getElementById('testimonials-row-2');
-  if (!track1 && !track2) return;
+let allTestimonialsData = [];
+let currentlyVisibleTestimonialsCount = 0;
 
-  let testimonials = [];
+async function loadTestimonials() {
+  const gridContainer = document.getElementById('testimonials-grid');
+  const loadMoreBtn = document.getElementById('load-more-testimonials-btn');
+  if (!gridContainer) return;
+
   try {
     const res = await fetch('data/testimonials.json');
     if (res.ok) {
-      testimonials = await res.json();
+      allTestimonialsData = await res.json();
     }
   } catch (e) {
     console.warn('Fetch data/testimonials.json failed or blocked by local CORS. Using fallback data.', e);
   }
 
   // Fallback data if fetch failed (e.g. local file:// protocol)
-  if (!testimonials || testimonials.length === 0) {
-    testimonials = [
+  if (!allTestimonialsData || allTestimonialsData.length === 0) {
+    allTestimonialsData = [
       {
         "id": 1,
-        "name": "Amina Rahman",
-        "location": "Malappuram",
+        "name": "Nimisha",
+        "location": "Kottayam",
         "rating": 5,
-        "quote": "ഈ കോഴ്സ് എടുത്തതിന് ശേഷം AI ഉപയോഗിച്ച് vudeo ഉണ്ടാക്കുന്നത് വളരെ എളുപ്പമായി. ഓരോ ക്ലാസും simple & practical aayum explain ചെയ്തിട്ടുണ്ട്. Thankyou sir for your support."
+        "audioUrl": "assets/audio/testimonial_nimisha.mp3",
+        "audioDuration": "0:19",
+        "quote": null
       },
       {
         "id": 2,
@@ -255,29 +259,40 @@ async function loadTestimonials() {
         "location": "Adoor",
         "rating": 5,
         "quote": "മുമ്പ് വീഡിയോ എഡിറ്റിംഗിൽ കോൺഫിഡൻസ് ഇല്ലായിരുന്നു. ഇപ്പോൾ AI ടൂളുകൾ ഉപയോഗിച്ച് പ്രൊഫഷണൽ വീഡിയോകൾ വളരെ വേഗത്തിൽ ചെയ്യാൻ കഴിയുന്നു. Thanks 🙏"
+      },
+      {
+        "id": 6,
+        "name": "Jayadev",
+        "location": "Kannur",
+        "rating": 5,
+        "quote": "കോഴ്സിലെ ഓരോ മോഡ്യൂളും വളരെ ഉപകാരപ്രദമായിരുന്നു. സോഷ്യൽ മീഡിയയ്ക്കായി നല്ല ക്വാളിറ്റിയുള്ള കണ്ടന്റ് ഇനി സ്വന്തമായി ഉണ്ടാക്കാൻ പറ്റുവല്ലോ 😅 only bcz of ur support"
       }
     ];
   }
 
-  // Split testimonials into 2 balanced rows
-  const mid = Math.ceil(testimonials.length / 2);
-  const row1Data = testimonials.slice(0, mid);
-  const row2Data = testimonials.slice(mid);
+  // Initial count: 6 on desktop (>=768px), 3 on mobile (<768px)
+  const isMobile = window.innerWidth < 768;
+  const initialCount = isMobile ? 3 : 6;
+  currentlyVisibleTestimonialsCount = Math.min(initialCount, allTestimonialsData.length);
 
-  if (track1) {
-    // Duplicate array for smooth infinite marquee looping
-    track1.innerHTML = renderTestimonialsHTML([...row1Data, ...row1Data]);
-  }
-  if (track2) {
-    // Duplicate array for smooth infinite marquee looping
-    track2.innerHTML = renderTestimonialsHTML([...row2Data, ...row2Data]);
-  }
+  renderTestimonialsGrid();
 
-  initAudioPlayers();
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      currentlyVisibleTestimonialsCount += 3;
+      renderTestimonialsGrid();
+    });
+  }
 }
 
-function renderTestimonialsHTML(testimonials) {
-  return testimonials.map(item => {
+function renderTestimonialsGrid() {
+  const gridContainer = document.getElementById('testimonials-grid');
+  const loadMoreBtnContainer = document.getElementById('testimonials-load-more-container');
+  if (!gridContainer) return;
+
+  const visibleItems = allTestimonialsData.slice(0, currentlyVisibleTestimonialsCount);
+
+  gridContainer.innerHTML = visibleItems.map(item => {
     const stars = Array(item.rating || 5).fill('<i class="bi bi-star-fill"></i>').join('');
     
     let quoteHtml = '';
@@ -319,8 +334,8 @@ function renderTestimonialsHTML(testimonials) {
       : item.name;
 
     return `
-      <div class="testimonial-marquee-card">
-        <div class="glass-card testimonial-card h-100">
+      <div class="col-md-6 col-lg-4">
+        <div class="glass-card testimonial-card h-100 p-4 border-primary shadow-lg">
           <div>
             <div class="testimonial-author">
               ${avatarHtml}
@@ -337,6 +352,16 @@ function renderTestimonialsHTML(testimonials) {
       </div>
     `;
   }).join('');
+
+  if (loadMoreBtnContainer) {
+    if (currentlyVisibleTestimonialsCount >= allTestimonialsData.length) {
+      loadMoreBtnContainer.style.display = 'none';
+    } else {
+      loadMoreBtnContainer.style.display = 'block';
+    }
+  }
+
+  initAudioPlayers();
 }
 
 function initAudioPlayers() {

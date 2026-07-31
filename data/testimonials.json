@@ -1,10 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Amina Rahman",
-    "location": "Malappuram",
+    "name": "pixora._ai",
+    "instagramUrl": "https://www.instagram.com/pixora._ai",
+    "location": "Kasaragod",
     "rating": 5,
-    "quote": "ഈ കോഴ്സ് എടുത്തതിന് ശേഷം AI ഉപയോഗിച്ച് vudeo ഉണ്ടാക്കുന്നത് വളരെ എളുപ്പമായി. ഓരോ ക്ലാസും simple & practical aayum explain ചെയ്തിട്ടുണ്ട്. Thankyou sir for your support."
+    "audioUrl": "assets/audio/testimonial_pixora_ai.mp3",
+    "audioDuration": "0:26",
+    "quote": "ഞാൻ ഇപ്പോൾ തന്നെ ഒരു 3 paid work ചെയ്തു കൊടുത്തു. എല്ലാം ഈ കോഴ്സ് il ചേരാൻ സാധിച്ചത് കൊണ്ടാണ് 🤝."
   },
   {
     "id": 2,
@@ -26,13 +29,12 @@
   },
   {
     "id": 4,
-    "name": "pixora._ai",
-    "instagramUrl": "https://www.instagram.com/pixora._ai",
-    "location": "Kasaragod",
+    "name": "Nimisha",
+    "location": "Kottayam",
     "rating": 5,
-    "audioUrl": "assets/audio/testimonial_pixora_ai.mp3",
-    "audioDuration": "0:26",
-    "quote": "ഞാൻ ഇപ്പോൾ തന്നെ ഒരു 3 paid work ചെയ്തു കൊടുത്തു. എല്ലാം ഈ കോഴ്സ് il ചേരാൻ സാധിച്ചത് കൊണ്ടാണ് 🤝."
+    "audioUrl": "assets/audio/testimonial_nimisha.mp3",
+    "audioDuration": "0:19",
+    "quote": null
   },
   {
     "id": 5,
@@ -78,11 +80,10 @@
   },
   {
     "id": 11,
-    "name": "Nimisha",
-    "location": "Kottayam",
+    "name": "Amina Rahman",
+    "location": "Malappuram",
     "rating": 5,
-    "audioUrl": "assets/audio/testimonial_nimisha.mp3",
-    "audioDuration": "0:19",
-    "quote": null
+    "quote": "ഈ കോഴ്സ് എടുത്തതിന് ശേഷം AI ഉപയോഗിച്ച് vudeo ഉണ്ടാക്കുന്നത് വളരെ എളുപ്പമായി. ഓരോ ക്ലാസും simple & practical aayum explain ചെയ്തിട്ടുണ്ട്. Thankyou sir for your support."
   }
+
 ]

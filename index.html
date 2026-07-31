@@ -205,13 +205,9 @@
 
           <!-- CTAs -->
           <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-            <a href="https://wa.me/919496957914?text=Hi%20INNOVERSSE%20Team!%20I%20want%20to%20join%20the%20AI%20Masterclass%20for%20%E2%82%B9599."
+            <a href="https://wa.me/919496957914?text=Hi%20INNOVERSSE%20Team!%20I%20want%20to%20join%20the%20AI%20Masterclass."
               target="_blank" class="btn-primary-blue fs-5 py-3 px-4 text-decoration-none">
-              <span class="d-inline-flex align-items-center justify-content-center flex-wrap gap-2 text-center">
-                <i class="bi bi-whatsapp"></i>
-                <span>Join Now &mdash; ₹599</span>
-                <span class="text-white-50 text-decoration-line-through fs-6 ms-1">₹2,999</span>
-              </span>
+              <i class="bi bi-whatsapp"></i> Join Now
             </a>
             <a href="#" id="watch-demo-btn" class="btn-outline-glass fs-5 py-3 px-4">
               <i class="bi bi-play-circle-fill text-primary fs-4"></i> Watch Intro Video
@@ -517,23 +513,16 @@
         <p>Authentic reviews and transformation stories from learners earning with AI skills.</p>
       </div>
 
-      <!-- Testimonials Dual Marquee Container (Row 1: Left to Right, Row 2: Right to Left) -->
-      <div class="testimonials-marquee-wrapper overflow-hidden position-relative my-4">
-        
-        <!-- Row 1: Left to Right moving -->
-        <div class="marquee-row marquee-row-left mb-4">
-          <div class="marquee-track" id="testimonials-row-1">
-            <!-- Rendered dynamically from data/testimonials.json -->
-          </div>
-        </div>
+      <!-- Static Testimonials Grid -->
+      <div class="row g-4 justify-content-center" id="testimonials-grid">
+        <!-- Rendered dynamically from data/testimonials.json -->
+      </div>
 
-        <!-- Row 2: Right to Left moving -->
-        <div class="marquee-row marquee-row-right">
-          <div class="marquee-track" id="testimonials-row-2">
-            <!-- Rendered dynamically from data/testimonials.json -->
-          </div>
-        </div>
-
+      <!-- Load More Testimonials Button -->
+      <div class="text-center mt-5" id="testimonials-load-more-container">
+        <button id="load-more-testimonials-btn" class="btn-outline-glass fs-5 py-3 px-4 rounded-3 shadow-lg">
+          <i class="bi bi-arrow-down-circle text-primary me-2"></i> Load More Reviews
+        </button>
       </div>
 
     </div>
