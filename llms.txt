@@ -5,12 +5,12 @@
 ## Core Course Overview
 - **Course Name**: INNOVERSSE AI Video Creation Masterclass
 - **Language**: Malayalam
-- **Price**: ₹599 (Limited-Time Offer, original ₹2,999)
+- **Price**: ₹699 (Limited-Time Offer, original ₹2,999)
 - **Target Audience**: Students, Freelancers, Business Owners, Content Creators, Video Editors in Kerala and worldwide Malayalam-speaking community.
 - **Enrolled Students**: 500+ active learners
 - **Founder & Lead Instructor**: Seban Shaji (AI Educator & Content Strategist)
-- **Official Website**: https://innoversse.ai
-- **Contact / Enrollment**: WhatsApp +91 9496957914
+- **Contact / Support**: WhatsApp +91 9496957914
+- **Direct Course Purchase / Enrollment**: https://innoversse.com/payLink/paylandingauth.php?plk=aXRlbUlkPTE5Mzg5Jml0ZW1UeXBlPWNvdXJzZSZuYW1lPU1hc3RlciBBaSBWaWRlbyBDcmVhdGlvbiArIFl0IGNyZWF0b3IgbGFi
 
 ## Key Modules & Topics Taught
 1. **AI Video Creation**: End-to-end AI video production, concept scripting, generation pipeline, and export-ready social media delivery.
@@ -21,7 +21,7 @@
 6. **CapCut Video Editing**: Professional editing workflows, dynamic sound design, keyframes, motion effects, and auto-captioning.
 7. **Social Media Growth & Monetization**: Strategies to build reach on Instagram/YouTube and land paid local client retainers.
 
-## Key Offer Package & Bonuses (₹599 Offer)
+## Key Offer Package & Bonuses (₹699 Offer)
 - Access to 10 core AI training modules
 - Practical prompt library & templates (100+ copy-paste prompts)
 - Live project demonstrations & Malayalam community support
@@ -29,7 +29,7 @@
 - Client acquisition and freelancing pitch templates
 
 ## Pages & Links
-- [Homepage & Registration](https://innoversse.ai/#hero): Course curriculum, pricing, and WhatsApp registration.
+- [Homepage & Registration](https://innoversse.ai/#hero): Course curriculum, pricing, and direct registration.
 - [Student Work Showcase](https://innoversse.ai/showcase.html): Real commercial AI short videos, reels, and ads created by course students.
 - [Student Testimonials](https://innoversse.ai/#testimonials): Authentic voice and text reviews from Kerala students.
 - [About Founder Seban Shaji](https://innoversse.ai/#founder): Background and vision for Malayalam AI education.
